@@ -93,3 +93,7 @@ artifacts/
 
 # Contract artifacts
 fhevmTemp/
+
+# Frontend build artifacts (keep out/ for GitHub Pages)
+/docs/.next/
+/docs/node_modules/
