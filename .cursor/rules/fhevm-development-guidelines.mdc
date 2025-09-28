@@ -1,0 +1,35 @@
+---
+alwaysApply: true
+---
+
+# FHEVM Development Guidelines
+
+## Core Requirements
+
+### Smart Contract Development
+- **MANDATORY**: All smart contracts MUST use full FHEVM capabilities - no simplified fallbacks allowed
+- Smart contracts MUST be developed in [fhevm-hardhat-template](mdc:fhevm-hardhat-template) directory
+- Use FHEVM-provided randomness generation methods when randomness is required
+- Reference [Fhevm0.8_Reference.md](mdc:Fhevm0.8_Reference.md) for FHEVM contract implementation details
+
+### Frontend Development
+- Create new frontend projects in a separate root-level directory
+- The [frontend](mdc:frontend) directory is READ-ONLY reference material - do not modify
+- Frontend interactions with FHEVM contracts MUST use:
+  - `@zama-fhe/relayer-sdk` for real relayer services, OR
+  - `@fhevm/mock-utils` for local mock implementation
+- Follow interaction patterns from reference frontend when implementing relayer/mock utilities
+
+### UI/UX Standards
+- Design modern, beautiful interfaces using styles like:
+  - Material Design
+  - Minimalist/modern
+  - Dark mode support
+  - Card-based layouts
+  - Neumorphism
+- Support bilingual (Chinese/English) interfaces when possible
+- Prioritize excellent user experience
+
+### Documentation Policy
+- Do NOT create documentation files unless explicitly requested by user
+- No automatic README.md or other .md file generation

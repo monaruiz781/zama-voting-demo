@@ -1,0 +1,43 @@
+---
+globs: *.tsx,*.jsx,*.css,*.scss
+description: UI design and styling standards
+---
+
+# UI Design Standards
+
+## Design Philosophy
+- **Modern & Clean**: Prioritize minimalist, contemporary design
+- **User-Centric**: Focus on excellent user experience and intuitive interfaces
+- **Responsive**: Ensure compatibility across devices and screen sizes
+
+## Supported Design Systems
+- **Material Design**: Google's design language with elevation, shadows, and motion
+- **Minimalist/Modern**: Clean lines, ample whitespace, subtle interactions
+- **Dark Mode**: Support dark theme variants for better accessibility
+- **Card-Based Layouts**: Organize content in digestible card components
+- **Neumorphism**: Soft, extruded surfaces with subtle shadows and highlights
+
+## Color & Typography
+- Use consistent color palettes with proper contrast ratios
+- Implement semantic color tokens (primary, secondary, success, error, warning)
+- Choose readable typography with appropriate font weights and sizes
+- Support system font preferences when possible
+
+## Internationalization
+- **Bilingual Support**: Implement Chinese (中文) and English language options
+- Use proper i18n libraries (react-i18next, next-i18next, etc.)
+- Consider text expansion/contraction in UI layouts
+- Implement RTL support considerations for future expansion
+
+## Component Standards
+- Build reusable, composable components
+- Implement proper loading states and error boundaries
+- Use semantic HTML elements for accessibility
+- Include proper ARIA labels and keyboard navigation
+- Provide visual feedback for user interactions
+
+## Animation & Interactions
+- Use subtle, purposeful animations
+- Implement smooth transitions between states
+- Provide immediate feedback for user actions
+- Consider reduced motion preferences for accessibility

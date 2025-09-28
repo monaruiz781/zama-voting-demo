@@ -1,0 +1,32 @@
+---
+alwaysApply: true
+---
+
+# Project Structure Guide
+
+## Directory Organization
+
+### Smart Contract Development
+- **Primary Location**: [fhevm-hardhat-template](mdc:fhevm-hardhat-template) - All smart contract development happens here
+- **Contracts**: [fhevm-hardhat-template/contracts](mdc:fhevm-hardhat-template/contracts) - Solidity contract files
+- **Deployment**: [fhevm-hardhat-template/deploy](mdc:fhevm-hardhat-template/deploy) - Deployment scripts
+- **Tests**: [fhevm-hardhat-template/test](mdc:fhevm-hardhat-template/test) - Contract test files
+- **Tasks**: [fhevm-hardhat-template/tasks](mdc:fhevm-hardhat-template/tasks) - Hardhat task definitions
+
+### Frontend Development
+- **Reference Only**: [frontend](mdc:frontend) - DO NOT MODIFY - Reference implementation only
+- **New Projects**: Create new frontend directories at project root level
+- **Key Reference Files**:
+  - [frontend/fhevm/useFhevm.tsx](mdc:frontend/fhevm/useFhevm.tsx) - FHEVM React hook patterns
+  - [frontend/hooks/useFHECounter.tsx](mdc:frontend/hooks/useFHECounter.tsx) - Contract interaction patterns
+  - [frontend/components/FHECounterDemo.tsx](mdc:frontend/components/FHECounterDemo.tsx) - UI component patterns
+
+### Configuration Files
+- **FHEVM Config**: [fhevm-hardhat-template/hardhat.config.ts](mdc:fhevm-hardhat-template/hardhat.config.ts)
+- **Reference**: [Fhevm0.8_Reference.md](mdc:Fhevm0.8_Reference.md) - FHEVM development reference
+
+## Development Workflow
+1. Smart contracts → [fhevm-hardhat-template](mdc:fhevm-hardhat-template)
+2. Frontend → New root-level directory
+3. Reference patterns → [frontend](mdc:frontend) (read-only)
+4. FHEVM integration → Follow [frontend/fhevm](mdc:frontend/fhevm) patterns

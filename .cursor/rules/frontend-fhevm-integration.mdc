@@ -1,0 +1,48 @@
+---
+globs: *.ts,*.tsx,*.js,*.jsx
+---
+
+# Frontend FHEVM Integration Patterns
+
+## Required Dependencies
+- Use `@zama-fhe/relayer-sdk` for production relayer integration
+- Use `@fhevm/mock-utils` for local development and testing
+- Reference implementation patterns from [frontend/fhevm](mdc:frontend/fhevm) directory
+
+## Integration Patterns
+
+### Relayer SDK Usage
+```typescript
+import { RelayerSDK } from '@zama-fhe/relayer-sdk';
+
+// Initialize relayer
+const relayer = new RelayerSDK({
+  relayerUrl: process.env.NEXT_PUBLIC_RELAYER_URL,
+  chainId: process.env.NEXT_PUBLIC_CHAIN_ID
+});
+
+// Encrypt data before sending to contract
+const encryptedValue = await relayer.encrypt(value, publicKey);
+```
+
+### Mock Utils for Development
+```typescript
+import { createMockFhevm } from '@fhevm/mock-utils';
+
+// For local testing
+const mockFhevm = createMockFhevm();
+const encryptedValue = mockFhevm.encrypt(value);
+```
+
+## Best Practices
+- Always handle encryption/decryption errors gracefully
+- Implement proper loading states for async FHEVM operations
+- Cache public keys appropriately to avoid repeated fetches
+- Use TypeScript for better type safety with encrypted values
+- Follow the hook patterns established in [frontend/hooks](mdc:frontend/hooks)
+
+## UI Integration
+- Show encryption status to users
+- Provide clear feedback during FHEVM operations
+- Handle network-specific configurations (localhost, testnet, mainnet)
+- Implement proper error boundaries for FHEVM failures

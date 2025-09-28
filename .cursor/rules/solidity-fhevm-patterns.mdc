@@ -1,0 +1,39 @@
+---
+globs: *.sol
+---
+
+# Solidity FHEVM Patterns
+
+## FHEVM Contract Requirements
+- All contracts must import and use FHEVM library: `import "@fhevm/solidity/contracts/FHE.sol";`
+- Use encrypted data types: `euint8`, `euint16`, `euint32`, `euint64`, `ebool`, `eaddress`
+- Implement proper access control with `TFHE.allow()` and `TFHE.isSenderAllowed()`
+- Use `TFHE.decrypt()` only when necessary and with proper permissions
+- Leverage FHEVM's encrypted operations: `TFHE.add()`, `TFHE.sub()`, `TFHE.mul()`, `TFHE.eq()`, etc.
+
+## Security Patterns
+- Always validate encrypted inputs with proper access controls
+- Use `onlySignedPublicKey` modifier for functions accepting encrypted parameters
+- Implement proper decryption permissions before revealing encrypted data
+- Consider gas optimization for encrypted operations
+
+## Example Structure
+```solidity
+pragma solidity ^0.8.24;
+
+import "@fhevm/solidity/contracts/FHE.sol";
+
+contract MyFHEVMContract {
+    using TFHE for euint32;
+    
+    mapping(address => euint32) private balances;
+    
+    function transfer(address to, einput encryptedAmount, bytes calldata inputProof) 
+        external 
+        onlySignedPublicKey(inputProof, msg.sender) 
+    {
+        euint32 amount = TFHE.asEuint32(encryptedAmount, inputProof);
+        // ... encrypted logic
+    }
+}
+```
