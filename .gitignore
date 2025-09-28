@@ -19,6 +19,7 @@ build/
 # IDE
 .vscode/
 .idea/
+.cursor/
 *.swp
 *.swo
 
@@ -94,6 +95,13 @@ artifacts/
 # Contract artifacts
 fhevmTemp/
 
-# Frontend build artifacts (keep out/ for GitHub Pages)
+# Frontend build artifacts (keep built files for GitHub Pages)
 /docs/.next/
 /docs/node_modules/
+# But keep the built static files
+!/docs/index.html
+!/docs/_next/
+!/docs/404.html
+!/docs/debug/
+!/docs/demo/
+!/docs/test/

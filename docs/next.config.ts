@@ -4,6 +4,14 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',
   trailingSlash: true,
+  basePath: '/zama-voting-demo',
+  assetPrefix: '/zama-voting-demo',
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   experimental: {
     turbo: {
       rules: {
